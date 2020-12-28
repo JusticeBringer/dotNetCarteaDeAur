@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29503.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotNetCarteaDeAur", "dotNetCarteaDeAur\dotNetCarteaDeAur.csproj", "{DF0B8FE9-2500-4AA9-9309-7D8B99A9FC1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotNetCarteaDeAur.Tests", "dotNetCarteaDeAur.Tests\dotNetCarteaDeAur.Tests.csproj", "{B93026C3-DB2A-4D91-A51F-BF0EDD45AB6F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF0B8FE9-2500-4AA9-9309-7D8B99A9FC1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF0B8FE9-2500-4AA9-9309-7D8B99A9FC1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF0B8FE9-2500-4AA9-9309-7D8B99A9FC1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF0B8FE9-2500-4AA9-9309-7D8B99A9FC1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B93026C3-DB2A-4D91-A51F-BF0EDD45AB6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B93026C3-DB2A-4D91-A51F-BF0EDD45AB6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B93026C3-DB2A-4D91-A51F-BF0EDD45AB6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B93026C3-DB2A-4D91-A51F-BF0EDD45AB6F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1DC75E42-B81A-4215-8B5E-19496B81D32D}
+	EndGlobalSection
+EndGlobal
