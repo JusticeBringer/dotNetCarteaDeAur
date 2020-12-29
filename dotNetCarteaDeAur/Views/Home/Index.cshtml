@@ -1,34 +1,144 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Golden Book";
+    ViewBag.Author = "Author:";
+    ViewBag.AuthorPrIosifTrifa = "Author: priest Iosif Trifa";
 }
 
-<div class="jumbotron">
-    <h1>Golden Book</h1>
-    <p class="lead">The bookshop you're looking for!</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+    <div class="jumbotron text-center">
+        <h1>Golden Book</h1>
+        <p class="lead mb-5">Our newest collection</p>
 
-<div class="row">
-    <div>
-        <h2  class="text-center text-capitalize">
-            Features
-        </h2>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img class="img-fluid" src="~/Assets/Images/ceEsteOasteaDomnului.png" alt="Ce este Oastea Domnului">
+                            <div class="mt-3">
+                                <h5>Ce este Oastea Domnului</h5>
+                                <p>@ViewBag.AuthorPrIosifTrifa</p>
+                                <button class="btn"><i class="fa fa-folder"></i>Add to cart</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <img class="img-fluid" src="~/Assets/Images/sabiaDuhului.png" alt="Sabia Duhului">
+                            <div class="mt-3">
+                                <h5>Sabia Duhului</h5>
+                                <p>@ViewBag.AuthorPrIosifTrifa</p>
+                                <button class="btn"><i class="fa fa-folder"></i>Add to cart</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <img class="img-fluid" src="~/Assets/Images/spreCanaan.png" alt="Spre Canaan">
+                            <div class="mt-3">
+                                <h5>Spre Canaan</h5>
+                                <p>@ViewBag.AuthorPrIosifTrifa</p>
+                                <button class="btn"><i class="fa fa-folder"></i>Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img class="img-fluid" src="~/Assets/Images/ceEsteOasteaDomnului.png" alt="Ce este Oastea Domnului">
+                            <div class="mt-3">
+                                <h5>Ce este Oastea Domnului</h5>
+                                <p>Autor: preot Iosif Trifa</p>
+                                <button class="btn"><i class="fa fa-folder"></i>Add to cart</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <img class="img-fluid" src="~/Assets/Images/sabiaDuhului.png" alt="Sabia Duhului">
+                            <div class="mt-3">
+                                <h5>Sabia Duhului</h5>
+                                <p>Autor: preot Iosif Trifa</p>
+                                <button class="btn"><i class="fa fa-folder"></i>Add to cart</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <img class="img-fluid" src="~/Assets/Images/spreCanaan.png" alt="Spre Canaan">
+                            <div class="mt-3">
+                                <h5>Spre Canaan</h5>
+                                <p>Autor: preot Iosif Trifa</p>
+                                <button class="btn"><i class="fa fa-folder"></i>Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img class="img-fluid" src="~/Assets/Images/ceEsteOasteaDomnului.png" alt="Ce este Oastea Domnului">
+                            <div class="mt-3">
+                                <h5>Ce este Oastea Domnului</h5>
+                                <p>Autor: preot Iosif Trifa</p>
+                                <button class="btn"><i class="fa fa-folder"></i>Add to cart</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <img class="img-fluid" src="~/Assets/Images/sabiaDuhului.png" alt="Sabia Duhului">
+                            <div class="mt-3">
+                                <h5>Sabia Duhului</h5>
+                                <p>Autor: preot Iosif Trifa</p>
+                                <button class="btn"><i class="fa fa-folder"></i>Add to cart</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <img class="img-fluid" src="~/Assets/Images/spreCanaan.png" alt="Spre Canaan">
+                            <div class="mt-3">
+                                <h5>Spre Canaan</h5>
+                                <p>Autor: preot Iosif Trifa</p>
+                                <button class="btn"><i class="fa fa-folder"></i>Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ol class="carousel-indicators neg-m-3-vw">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+
+        </div>
+
+        <p class="text-center mt-5"><a href="" class="btn btn-primary btn-lg">See entire collection &raquo;</a></p>
     </div>
-    <div class="col-md-4">
-        <h2>A lot of books</h2>
-        <p>
-            Our bookshop contains books from a lot of publishers
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+
+<div>
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center text-capitalize m-5">
+                Features
+            </h2>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Suited prices</h2>
-        <p>Our prices range from few bucks to hundred.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Fast delivery</h2>
-        <p>Your orders come to your house in 2-3 working days.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    <div class="row">
+        <div class="col-md-4">
+            <h2>A lot of books</h2>
+            <p>
+                Our bookshop contains books from a lot of publishers
+            </p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Suited prices</h2>
+            <p>Our prices range from few bucks to hundred.</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Fast delivery</h2>
+            <p>Your orders come to your house in 2-3 working days.</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        </div>
     </div>
 </div>

@@ -1,0 +1,44 @@
+﻿.img-fluid {
+    max-width: 75%;
+    max-height: 70%
+}
+
+.carousel-control-prev, .carousel-control-next {
+    width: 5%;
+}
+
+.carousel-item {
+    padding-left: 5vw;
+    padding-right: 2vw;
+}
+
+.neg-m-3-vw{
+    margin: -2vw;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item{
+    margin-left: 3vw;
+}
+
+.nav-link {
+    padding: 0;
+}
+
+li > a {
+    color: white;
+}
+
+li > a:hover {
+    color:bisque;
+}
+
+.bg-primary, .btn-primary {
+    background-color: #c4b133 !important;
+    border-color: #c4b133 !important;
+}
+
