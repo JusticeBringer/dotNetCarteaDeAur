@@ -11,10 +11,10 @@ namespace dotNetCarteaDeAur.Controllers
     {
         private DbCtx db = new DbCtx();
 
-        // GET: Book
+        [HttpGet]
         public ActionResult Index()
         {
-            List<Book> books = db.Books.ToList();
+            List<Book> books = db.Books.Include("Publisher").ToList();
             ViewBag.Books = books;
 
             return View();
