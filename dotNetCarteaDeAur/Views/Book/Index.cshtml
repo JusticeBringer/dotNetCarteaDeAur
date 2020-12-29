@@ -14,5 +14,9 @@
         @Html.Label("Author", "Author:")
         <br />
         <p>@book.Author</p>
+        @using (Html.BeginForm(actionName: "Details", controllerName: "Book", method: FormMethod.Get, routeValues: new { id = book.Book_id }))
+        {
+            <button class="btn btn-primary m-2">Details</button>
+        }
     </div>
 }

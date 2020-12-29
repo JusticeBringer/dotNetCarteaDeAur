@@ -8,7 +8,7 @@ using System.Web;
 using System.Data.Entity;
 
 namespace dotNetCarteaDeAur.Models
-{
+{   
     [Table("Books")]
     public class Book
     {
@@ -40,7 +40,6 @@ namespace dotNetCarteaDeAur.Models
         // one to many
         [Column("Pub_id")]
         public int Pub_id { get; set; }
-        public Publisher Publishers { get; set; }
         public virtual Publisher Publisher { get; set; }
 
     }

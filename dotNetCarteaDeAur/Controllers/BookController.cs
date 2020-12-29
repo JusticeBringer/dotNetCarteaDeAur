@@ -19,5 +19,20 @@ namespace dotNetCarteaDeAur.Controllers
 
             return View();
         }
+
+        [HttpGet]
+        public ActionResult Details(int? id)
+        {
+            if (id.HasValue)
+            {
+                Book book = db.Books.Find(id);
+                if (book != null)
+                {
+                    return View(book);
+                }
+                return HttpNotFound("Couldn't find the book with id " + id.ToString() + "!");
+            }
+            return HttpNotFound("Missing book id parameter!");
+        }
     }
 }
