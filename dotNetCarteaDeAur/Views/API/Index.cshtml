@@ -6,6 +6,7 @@
 
 <h2 class="mb-3">@ViewBag.Title</h2>
 
+<hr />
 <h3 class="mb-2">Books</h3>
 <div class="row">
     @foreach (var book in ViewBag.Books)
@@ -45,6 +46,42 @@
         <div class="col-md-12">
             <div class="mt-3">
                 <h4>Id @pub.Pub_id - @pub.Pub_name</h4>
+                <h5> Publisher contact info: </h5>
+
+                @foreach (var pub_con in ViewBag.PubContacts)
+                {
+                    if (pub_con.Pub_contact_id == pub.Pub_id)
+                    {
+                        <p>Publisher email: @pub_con.Pub_email</p>
+                        <p>Publisher phone: @pub_con.Pub_phone</p>
+                        <p>Publisher city: @pub_con.Pub_city</p>
+                        <p>Publisher street: @pub_con.Pub_street</p>
+                    }
+                }
+            </div>
+        </div>
+    }
+</div>
+
+<hr />
+<h3 class="mb-2">Orders</h3>
+<div class="row">
+    @foreach (var order in ViewBag.Orders)
+    {
+        <div class="col-md-12">
+            <div class="mt-3">
+                <h4>Order id: @order.Ord_id</h4>
+                <p>It was ordered by customer with customer id: @order.Cust_id</p>
+                <p>Price: @order.Ord_price</p>
+                <p>Time placed: @order.Ord_placed</p>
+                @if (order.Ord_arrived != null)
+                {
+                    <p>Time arrived: @order.Ord_arrived</p>
+                }
+                @if (order.Status != null)
+                {
+                    <p>Status: @order.Status</p>
+                }
             </div>
         </div>
     }

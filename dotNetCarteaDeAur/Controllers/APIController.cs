@@ -14,14 +14,23 @@ namespace dotNetCarteaDeAur.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            List<Book> books = db.Books.ToList();
-            ViewBag.Books = books;
+            List<PubContact> pubContacts = db.PubContacts.ToList();
+            ViewBag.PubContacts = pubContacts;
 
             List<Publisher> publishers = db.Publishers.ToList();
             ViewBag.Publishers = publishers;
 
+            List<Book> books = db.Books.ToList();
+            ViewBag.Books = books;
+
             List<Customer> customers = db.Customers.ToList();
             ViewBag.Customers = customers;
+
+            List<Order> orders = db.Orders.ToList();
+            ViewBag.Orders = orders;
+
+            List<Orders_items> orders_Items = db.Orders_Items.ToList();
+            ViewBag.Orders_items = orders_Items;
 
             return View();
         }

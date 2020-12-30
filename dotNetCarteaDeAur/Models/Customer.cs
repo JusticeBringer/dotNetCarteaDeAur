@@ -31,5 +31,8 @@ namespace dotNetCarteaDeAur.Models
 
         [Required]
         public string Phone { get; set; }
+
+        // many-to-one 
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }

@@ -44,5 +44,13 @@ namespace dotNetCarteaDeAur.Models
         [Column("Pub_id")]
         public int Pub_id { get; set; }
         public virtual Publisher Publisher { get; set; }
+
+        public Book ()
+        {
+            this.Orders_Items = new HashSet<Orders_items>();
+        }
+
+        // many-to-many with orders_items
+        public virtual ICollection<Orders_items> Orders_Items { get; set; }
     }
 }
