@@ -54,7 +54,7 @@ namespace dotNetCarteaDeAur.Models
                 PublishDate = new DateTime(2015, 12, 31),
                 ISBN = "978-3-16-148410-0",
                 Price = 14.5,
-                Quantity = 2,
+                Quantity = 24,
                 ImagePath = "/Assets/Images/ceEsteOasteaDomnului.png",
                 Publisher = OD
             };
@@ -66,7 +66,7 @@ namespace dotNetCarteaDeAur.Models
                 PublishDate = new DateTime(2016, 12, 31),
                 ISBN = "978-3-16-148410-0",
                 Price = 14.5,
-                Quantity = 2,
+                Quantity = 45,
                 ImagePath = "/Assets/Images/spreCanaan.png",
                 Publisher = OD
             };
@@ -78,7 +78,7 @@ namespace dotNetCarteaDeAur.Models
                 PublishDate = new DateTime(2014, 12, 31),
                 ISBN = "978-3-16-148410-0",
                 Price = 14.5,
-                Quantity = 2,
+                Quantity = 20,
                 ImagePath = "/Assets/Images/sabiaDuhului.png",
                 Publisher = OD
             };
@@ -90,7 +90,7 @@ namespace dotNetCarteaDeAur.Models
                 PublishDate = new DateTime(2013, 12, 31),
                 ISBN = "978-3-16-148410-0",
                 Price = 14.5,
-                Quantity = 2,
+                Quantity = 30,
                 ImagePath = "/Assets/Images/maiLangaDomnulMeu.jpg",
                 Publisher = OD
             };
@@ -128,6 +128,7 @@ namespace dotNetCarteaDeAur.Models
             };
 
             // Create orders
+
             Order o1 = new Order
             {
                 Ord_id = 1,
@@ -135,6 +136,12 @@ namespace dotNetCarteaDeAur.Models
                 Ord_placed = new DateTime(2013, 12, 31),
                 Ord_arrived = new DateTime(2014, 10, 30),
                 Status = "Delivered",
+                Cust_id = 1,
+                Quantity_bought = "2 3",
+                Books = new List<Book>()
+                {
+                    b1, b2
+                },
                 Customer = c1
             };
             Order o2 = new Order
@@ -144,6 +151,12 @@ namespace dotNetCarteaDeAur.Models
                 Ord_placed = new DateTime(2013, 10, 24),
                 Ord_arrived = new DateTime(2013, 11, 30),
                 Status = "Delivered",
+                Cust_id = 2,
+                Quantity_bought = "1 2",
+                Books = new List<Book>()
+                {
+                    b2, b3
+                },
                 Customer = c2
             };
             Order o3 = new Order
@@ -151,27 +164,13 @@ namespace dotNetCarteaDeAur.Models
                 Ord_id = 3,
                 Ord_price = 105.23,
                 Ord_placed = new DateTime(2012, 10, 24),
+                Cust_id = 3,
+                Quantity_bought = "1 6",
+                Books = new List<Book>()
+                {
+                    b1, b4
+                },
                 Customer = c3
-            };
-
-            // Create orders_items
-            Orders_items oi1 = new Orders_items
-            {
-                Ord_id = 1,
-                Quantity_bought = new int[2] { 1, 2},
-                Books = new List<Book>()
-                {
-                    b1, b2
-                }
-            };
-            Orders_items oi2 = new Orders_items
-            {
-                Ord_id = 2,
-                Quantity_bought = new int[2] { 2, 3 },
-                Books = new List<Book>()
-                {
-                    b1, b2
-                }
             };
 
             // Create lists for all tables

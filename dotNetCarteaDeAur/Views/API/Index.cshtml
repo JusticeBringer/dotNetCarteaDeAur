@@ -2,6 +2,8 @@
 
 @{
     ViewBag.Title = "API - Database View";
+    int count = -1;
+    int snd_count = -1;
 }
 
 <h2 class="mb-3">@ViewBag.Title</h2>
@@ -68,6 +70,7 @@
 <div class="row">
     @foreach (var order in ViewBag.Orders)
     {
+        count = -1;
         <div class="col-md-12">
             <div class="mt-3">
                 <h4>Order id: @order.Ord_id</h4>
@@ -81,6 +84,28 @@
                 @if (order.Status != null)
                 {
                     <p>Status: @order.Status</p>
+                }
+                <h6> Books bought </h6>
+                @foreach (var b in order.Books)
+                {   
+                    count++;
+                    snd_count = 0;
+                    <p>Title: @b.Title</p>
+                    foreach (var ord_q_b in order.Quantity_bought)
+                    {
+                        if (snd_count == 0 && count == 0)
+                        {
+                            <p>Quantity: @ord_q_b</p>
+                            break;
+                        }
+
+                        if (snd_count == (count*2))
+                        {
+                            <p>Quantity: @ord_q_b</p>
+                            break;
+                        }
+                        snd_count++;
+                    }
                 }
             </div>
         </div>

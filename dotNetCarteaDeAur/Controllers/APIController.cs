@@ -29,9 +29,6 @@ namespace dotNetCarteaDeAur.Controllers
             List<Order> orders = db.Orders.ToList();
             ViewBag.Orders = orders;
 
-            List<Orders_items> orders_Items = db.Orders_Items.ToList();
-            ViewBag.Orders_items = orders_Items;
-
             return View();
         }
     }

@@ -187,7 +187,6 @@
     <Compile Include="Models\Initp.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Order.cs" />
-    <Compile Include="Models\Orders_items.cs" />
     <Compile Include="Models\Publisher.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\PubContact.cs" />

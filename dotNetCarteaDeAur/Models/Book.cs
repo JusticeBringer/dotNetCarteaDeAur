@@ -47,10 +47,10 @@ namespace dotNetCarteaDeAur.Models
 
         public Book ()
         {
-            this.Orders_Items = new HashSet<Orders_items>();
+            this.Orders = new HashSet<Order>();
         }
 
-        // many-to-many with orders_items
-        public virtual ICollection<Orders_items> Orders_Items { get; set; }
+        // many-to-many with order
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }
