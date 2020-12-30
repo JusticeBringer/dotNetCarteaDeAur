@@ -37,6 +37,9 @@ namespace dotNetCarteaDeAur.Models
         [Required]
         public int Quantity { get; set; }
 
+        [Required]
+        public string ImagePath { get; set; }
+
         // one to many
         [Column("Pub_id")]
         public int Pub_id { get; set; }

@@ -1,118 +1,51 @@
-﻿@{
+﻿@model dotNetCarteaDeAur.Models.Book
+
+@{
     ViewBag.Title = "Golden Book";
     ViewBag.Author = "Author:";
     ViewBag.AuthorPrIosifTrifa = "Author: priest Iosif Trifa";
 }
 
-    <div class="jumbotron text-center">
-        <h1>Golden Book</h1>
-        <p class="lead mb-5">Our newest collection</p>
+<div class="jumbotron text-center">
+    <h1>Golden Book</h1>
+    <p class="lead mb-5">Our newest collection</p>
 
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <img class="img-fluid" src="~/Assets/Images/ceEsteOasteaDomnului.png" alt="Ce este Oastea Domnului">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="row">
+                    @foreach (var book in ViewBag.Books)
+                    {
+                        <div class="col-md-3">
+                            <img class="img-fluid" src=@book.ImagePath alt="@book.ImagePath">
                             <div class="mt-3">
-                                <h5>Ce este Oastea Domnului</h5>
-                                <p>@ViewBag.AuthorPrIosifTrifa</p>
+                                <h5>@book.Title</h5>
+                                <p>@book.Author</p>
                                 <button class="btn"><i class="fa fa-folder"></i>Add to cart</button>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <img class="img-fluid" src="~/Assets/Images/sabiaDuhului.png" alt="Sabia Duhului">
-                            <div class="mt-3">
-                                <h5>Sabia Duhului</h5>
-                                <p>@ViewBag.AuthorPrIosifTrifa</p>
-                                <button class="btn"><i class="fa fa-folder"></i>Add to cart</button>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <img class="img-fluid" src="~/Assets/Images/spreCanaan.png" alt="Spre Canaan">
-                            <div class="mt-3">
-                                <h5>Spre Canaan</h5>
-                                <p>@ViewBag.AuthorPrIosifTrifa</p>
-                                <button class="btn"><i class="fa fa-folder"></i>Add to cart</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <img class="img-fluid" src="~/Assets/Images/ceEsteOasteaDomnului.png" alt="Ce este Oastea Domnului">
-                            <div class="mt-3">
-                                <h5>Ce este Oastea Domnului</h5>
-                                <p>Autor: preot Iosif Trifa</p>
-                                <button class="btn"><i class="fa fa-folder"></i>Add to cart</button>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <img class="img-fluid" src="~/Assets/Images/sabiaDuhului.png" alt="Sabia Duhului">
-                            <div class="mt-3">
-                                <h5>Sabia Duhului</h5>
-                                <p>Autor: preot Iosif Trifa</p>
-                                <button class="btn"><i class="fa fa-folder"></i>Add to cart</button>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <img class="img-fluid" src="~/Assets/Images/spreCanaan.png" alt="Spre Canaan">
-                            <div class="mt-3">
-                                <h5>Spre Canaan</h5>
-                                <p>Autor: preot Iosif Trifa</p>
-                                <button class="btn"><i class="fa fa-folder"></i>Add to cart</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <img class="img-fluid" src="~/Assets/Images/ceEsteOasteaDomnului.png" alt="Ce este Oastea Domnului">
-                            <div class="mt-3">
-                                <h5>Ce este Oastea Domnului</h5>
-                                <p>Autor: preot Iosif Trifa</p>
-                                <button class="btn"><i class="fa fa-folder"></i>Add to cart</button>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <img class="img-fluid" src="~/Assets/Images/sabiaDuhului.png" alt="Sabia Duhului">
-                            <div class="mt-3">
-                                <h5>Sabia Duhului</h5>
-                                <p>Autor: preot Iosif Trifa</p>
-                                <button class="btn"><i class="fa fa-folder"></i>Add to cart</button>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <img class="img-fluid" src="~/Assets/Images/spreCanaan.png" alt="Spre Canaan">
-                            <div class="mt-3">
-                                <h5>Spre Canaan</h5>
-                                <p>Autor: preot Iosif Trifa</p>
-                                <button class="btn"><i class="fa fa-folder"></i>Add to cart</button>
-                            </div>
-                        </div>
-                    </div>
+                    }
                 </div>
             </div>
-            <ol class="carousel-indicators neg-m-3-vw">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-
         </div>
+        <ol class="carousel-indicators neg-m-3-vw">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
 
-        <p class="text-center mt-5"><a href="" class="btn btn-primary btn-lg">See entire collection &raquo;</a></p>
     </div>
+
+    <p class="text-center mt-5"> <a href="" class="">@Html.ActionLink("See entire collection", "Index", "Book") &raquo;</a></p>
+</div>
 
 <div>
     <div class="row">

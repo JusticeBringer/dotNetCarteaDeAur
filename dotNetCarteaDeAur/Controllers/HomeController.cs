@@ -1,4 +1,5 @@
-﻿using System;
+﻿using dotNetCarteaDeAur.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,8 +9,13 @@ namespace dotNetCarteaDeAur.Controllers
 {
     public class HomeController : Controller
     {
+        private DbCtx db = new DbCtx();
+        [HttpGet]
         public ActionResult Index()
         {
+            List<Book> books = db.Books.Include("Publisher").ToList();
+            ViewBag.Books = books;
+
             return View();
         }
 
