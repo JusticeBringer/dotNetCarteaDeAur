@@ -27,13 +27,13 @@ namespace dotNetCarteaDeAur.Models
         public DateTime? Ord_arrived { get; set; }
 
         [RegularExpression(@"^[a-zA-Z][a-zA-Z]{3,19}$", ErrorMessage = "This is not a valid status!")]
-        // Status has to be start with letters 
+        // Status has to start with letters 
         // and contains letters characters in 4 to 20 length
         public string? Status { get; set; }
 
         [Required]
         [RegularExpression(@"^[0-9][0-9]$", ErrorMessage = "This is not a valid quantity bought!")]
-        // Quantity has to be start with numbers and end with numbers
+        // Quantity has to start with numbers and end with numbers
         // "2 8 12 4" meaning is that user bought 2, 8, 12, 4 books of the Books array
         public string Quantity_bought { set; get; }
 

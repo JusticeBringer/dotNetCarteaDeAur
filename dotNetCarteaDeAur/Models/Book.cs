@@ -20,7 +20,7 @@ namespace dotNetCarteaDeAur.Models
         MinLength(10, ErrorMessage = "Title cannot be less than 10"),
         MaxLength(80, ErrorMessage = "Title cannot be more than 80")]
         [RegularExpression(@"^[a-zA-Z][a-zA-Z]{9,79}$", ErrorMessage = "This is not a valid book title!")]
-        // Title has to be start with letters 
+        // Title has to start with letters 
         // and contains letters characters in 10 to 80 length
         public string Title { get; set; }
 
@@ -28,7 +28,7 @@ namespace dotNetCarteaDeAur.Models
         MinLength(4, ErrorMessage = "Author cannot be less than 4"),
         MaxLength(80, ErrorMessage = "Author cannot be more than 80")]
         [RegularExpression(@"^[a-zA-Z][a-zA-Z]{3,79}$", ErrorMessage = "This is not a valid book author name!")]
-        // Author has to be start with letters 
+        // Author has to start with letters 
         // and contains letters characters in 4 to 80 length
         public string Author { get; set; }
 
