@@ -7,25 +7,22 @@ using System.Web.Mvc;
 
 namespace dotNetCarteaDeAur.Controllers
 {
-    public class HomeController : Controller
+    public class APIController : Controller
     {
         private DbCtx db = new DbCtx();
+
         [HttpGet]
         public ActionResult Index()
         {
             List<Book> books = db.Books.ToList();
             ViewBag.Books = books;
 
-            return View();
-        }
+            List<Publisher> publishers = db.Publishers.ToList();
+            ViewBag.Publishers = publishers;
 
-        public ActionResult About()
-        {
-            return View();
-        }
+            List<Customer> customers = db.Customers.ToList();
+            ViewBag.Customers = customers;
 
-        public ActionResult Contact()
-        {
             return View();
         }
     }

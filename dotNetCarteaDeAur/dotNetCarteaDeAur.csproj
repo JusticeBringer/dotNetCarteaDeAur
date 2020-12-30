@@ -171,6 +171,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\APIController.cs" />
     <Compile Include="Controllers\BookController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -178,19 +179,22 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\API.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Initp.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Orders_items.cs" />
     <Compile Include="Models\Publisher.cs" />
-    <Compile Include="Models\PublisherContactInfo.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\PubContact.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\BookSchema.mdf" />
-    <Content Include="App_Data\BookSchema_log.ldf">
-      <DependentUpon>BookSchema.mdf</DependentUpon>
+    <Content Include="App_Data\GoldenBookSchema.mdf" />
+    <Content Include="App_Data\GoldenBookSchema_log.ldf">
+      <DependentUpon>GoldenBookSchema.mdf</DependentUpon>
     </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -448,6 +452,7 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Book\Index.cshtml" />
     <Content Include="Views\Book\Details.cshtml" />
+    <Content Include="Views\API\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

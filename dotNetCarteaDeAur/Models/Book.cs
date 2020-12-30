@@ -44,19 +44,5 @@ namespace dotNetCarteaDeAur.Models
         [Column("Pub_id")]
         public int Pub_id { get; set; }
         public virtual Publisher Publisher { get; set; }
-
-    }
-
-    public class DbCtx : DbContext
-    {
-        public DbCtx() : base("GoldenBookDB")
-        {
-            // set the initializer here
-            Database.SetInitializer<DbCtx>(new Initp());
-        }
-        public DbSet<Book> Books { get; set; }
-        public DbSet<Publisher> Publishers { get; set; }
-        public DbSet<PublisherContactInfo> PublisherContactInfos { get; set; }
-
     }
 }

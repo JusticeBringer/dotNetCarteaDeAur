@@ -20,8 +20,8 @@ namespace dotNetCarteaDeAur.Models
         // many-to-one relationship
         public virtual ICollection<Book> Books { get; set; }
 
-        // one-to one-relationship
+        // one-to-one
         [Required]
-        public virtual PublisherContactInfo PublisherContactInfo { get; set; }
+        public virtual PubContact Pub_Contact { get; set; }
     }
 }
