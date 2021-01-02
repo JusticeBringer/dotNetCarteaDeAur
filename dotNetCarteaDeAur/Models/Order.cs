@@ -29,7 +29,9 @@ namespace dotNetCarteaDeAur.Models
         [RegularExpression(@"^[a-zA-Z][a-zA-Z]{3,19}$", ErrorMessage = "This is not a valid status!")]
         // Status has to start with letters 
         // and contains letters characters in 4 to 20 length
+        #pragma warning disable CS8632 // The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
         public string? Status { get; set; }
+        #pragma warning restore CS8632 // The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
 
         [Required]
         [RegularExpression(@"^[\d\s]+$", ErrorMessage = "This is not a valid quantity bought!")]
