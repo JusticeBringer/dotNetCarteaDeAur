@@ -19,7 +19,8 @@ namespace dotNetCarteaDeAur.Models
         public string Pub_email { get; set; }
 
         [Required]
-        [RegularExpression(@"^07(\d{8})$", ErrorMessage = "This is not a valid phone number!")]
+        [RegularExpression(@"^02(\d{8})$", ErrorMessage = "This is not a valid phone number!")]
+        // Begins with 02 and has to have 8 more digits
         public string Pub_phone { get; set; }
 
         [Required]

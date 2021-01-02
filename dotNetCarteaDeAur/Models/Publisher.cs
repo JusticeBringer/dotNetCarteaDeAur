@@ -16,9 +16,10 @@ namespace dotNetCarteaDeAur.Models
         // No need for validation - it is not completed by user
         public int Pub_id { get; set; }
         [Required]
-        [RegularExpression(@"^[a-zA-Z][a-zA-Z]{5,11}$", ErrorMessage = "This is not a valid publisher name!")]
+        [RegularExpression(@"^([a-zA-Z]+(?:[ -][a-zA-Z]+)*){5,19}$", ErrorMessage = "This is not a valid publisher name!")]
         // Publisher name has to be start with letters 
-        // and contains letters characters in 6 to 12 length
+        // followed by any char dot and spaces
+        // and contains letters characters in 6 to 20 length
         public string Pub_name { get; set; }
 
         // many-to-one relationship

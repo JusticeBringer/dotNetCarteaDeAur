@@ -16,7 +16,7 @@ namespace dotNetCarteaDeAur.Models
             {
                 Pub_contact_id = 1,
                 Pub_email = "contact@oasteadomnului.ro",
-                Pub_phone = "0269 216 677",
+                Pub_phone = "0269216677",
                 Pub_city = "Sibiu",
                 Pub_street = "Str. Charles Darwin, nr. 11"
             };
@@ -25,7 +25,7 @@ namespace dotNetCarteaDeAur.Models
             {
                 Pub_contact_id = 2,
                 Pub_email = "editura@egumenita.ro",
-                Pub_phone = "0236 326730",
+                Pub_phone = "0236326730",
                 Pub_city = "Galati",
                 Pub_street = "Str. Mihail Kogalniceanu nr.29"
             };
@@ -34,14 +34,14 @@ namespace dotNetCarteaDeAur.Models
             Publisher OD = new Publisher
             {
                 Pub_id = 1,
-                Pub_name = "Editura ‹‹Oastea Domnului››",
+                Pub_name = "Oastea Domnului",
                 Pub_Contact = OD_con
             };
             // Create secondary publisher
             Publisher Egumenita = new Publisher
             {
                 Pub_id = 2,
-                Pub_name = "Editura Egumenita",
+                Pub_name = "Egumenita",
                 Pub_Contact = Egumenita_con
             };
 
@@ -85,7 +85,7 @@ namespace dotNetCarteaDeAur.Models
             Book b4 = new Book
             {
                 Book_id = 4,
-                Title = "Mai lângă Domnul meu",
+                Title = "Mai langa Domnul meu",
                 Author = "Pr. Iosif Trifa",
                 PublishDate = new DateTime(2013, 12, 31),
                 ISBN = "978-3-16-148410-0",
@@ -104,7 +104,7 @@ namespace dotNetCarteaDeAur.Models
                 City = "Galati",
                 Street = "Str. Crizanthemes",
                 P_code = "807178",
-                Phone = "40745566921"
+                Phone = "0745566921"
             };
             Customer c2 = new Customer
             {
@@ -114,7 +114,7 @@ namespace dotNetCarteaDeAur.Models
                 City = "Bucharest",
                 Street = "Str. Ghiocelos",
                 P_code = "807172",
-                Phone = "40743566921"
+                Phone = "0743566921"
             };
             Customer c3 = new Customer
             {
@@ -124,7 +124,7 @@ namespace dotNetCarteaDeAur.Models
                 City = "Cluj",
                 Street = "Str. Center Square",
                 P_code = "847172",
-                Phone = "40743186921"
+                Phone = "0743186921"
             };
 
             // Create orders

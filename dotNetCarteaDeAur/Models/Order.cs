@@ -32,7 +32,7 @@ namespace dotNetCarteaDeAur.Models
         public string? Status { get; set; }
 
         [Required]
-        [RegularExpression(@"^[0-9][0-9]$", ErrorMessage = "This is not a valid quantity bought!")]
+        [RegularExpression(@"^[\d\s]+$", ErrorMessage = "This is not a valid quantity bought!")]
         // Quantity has to start with numbers and end with numbers
         // "2 8 12 4" meaning is that user bought 2, 8, 12, 4 books of the Books array
         public string Quantity_bought { set; get; }
