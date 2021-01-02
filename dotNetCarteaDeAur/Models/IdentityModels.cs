@@ -25,6 +25,12 @@ namespace dotNetCarteaDeAur.Models
         {
         }
 
+        public DbSet<Book> Books { get; set; }
+        public DbSet<PubContact> PubContacts { get; set; }
+        public DbSet<Publisher> Publishers { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Order> Orders { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
