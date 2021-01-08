@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using dotNetCarteaDeAur.Models;
+using System.Data.Entity;
+using System.Data.Entity.Validation;
 
 namespace dotNetCarteaDeAur.Controllers
 {
@@ -24,6 +26,8 @@ namespace dotNetCarteaDeAur.Controllers
         public ActionResult New()
         {
             Book book = new Book();
+            book.Orders = new List<Order>();
+
             return View(book);
         }
 
@@ -32,26 +36,22 @@ namespace dotNetCarteaDeAur.Controllers
         {
             try
             {
-                return RedirectToAction("hOfsfME");
                 if (ModelState.IsValid)
                 {
-                    //bookRequest.Publisher = db.Publishers.FirstOrDefault(p => p.Pub_id.Equals(1));
+                    bookRequest.Publisher = db.Publishers.FirstOrDefault(p => p.Pub_id.Equals(1));
                     db.Books.Add(bookRequest);
                     db.SaveChanges();
-                    return RedirectToAction("hOfsfME");
+                    return RedirectToAction("Index");
                 }
-                else
-                {
-                    //bookRequest.Publisher = db.Publishers.FirstOrDefault(p => p.Pub_id.Equals(1));
-                    //db.Books.Add(bookRequest);
-                    //db.SaveChanges();
-                    return RedirectToAction("hOfsfME");
-                }
+                return RedirectToAction("Index", "Home");
                 return View(bookRequest);
             }
-            catch (Exception e)
+            catch (DbEntityValidationException ex)
             {
-                Console.WriteLine(e);
+                Console.WriteLine(ex); 
+                string errorMessages = string.Join("; ", ex.EntityValidationErrors.SelectMany(x => x.ValidationErrors)
+                                                                                  .Select(x => x.PropertyName + ": " + x.ErrorMessage));
+                return View(errorMessages);
                 return View(bookRequest);
             }
         }

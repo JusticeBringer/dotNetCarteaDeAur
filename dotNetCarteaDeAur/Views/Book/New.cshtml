@@ -8,19 +8,24 @@
 {
     @Html.Label("Title", "Book Title:")
     <br />
-    @Html.TextBoxFor(b => b.Title, null, new { placeholder = "Type in the book's title", @class = "formcontrol" })
+    @Html.TextBoxFor(b => b.Title, new { placeholder = "Type in the book's title", @class = "formcontrol" })
     @Html.ValidationMessageFor(b => b.Title, "", new { @class = "text-danger" })
     <br />
 
     @Html.Label("Author", "Author:")
     <br />
-    @Html.TextBoxFor(b => b.Author, null, new { placeholder = "Type in the book's author", @class = "formcontrol" })
+    @Html.TextBoxFor(b => b.Author, new { placeholder = "Type in the book's author", @class = "formcontrol" })
     @Html.ValidationMessageFor(b => b.Author, "", new { @class = "text-danger" })
     <br />
 
-
-
-
+    @Html.Label("PublishDate", "Publish Date:")
     <br />
-    <button class="btn btn-primary" type="submit">Create</button>
-}
+    @*   @Html.TextBoxFor(b => b.PublishDate, new { placeholder = "Type in the book's publish date", @class = "formcontrol" })
+            @Html.ValidationMessageFor(b => b.PublishDate, "", new { @class = "text-danger" })  *@
+            <br />
+
+
+
+            <br />
+            <button class="btn btn-primary" type="submit">Create</button>
+        }

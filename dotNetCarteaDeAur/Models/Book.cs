@@ -32,9 +32,6 @@ namespace dotNetCarteaDeAur.Models
         // and contains letters characters in 4 to 80 length
         public string Author { get; set; }
 
-        //[Required]
-        // No validation here - using DateTime.TryParseExact at registering
-        public DateTime PublishDate { get; set; }
 
         //[Required]
         [RegularExpression(@"[0-9]*[-| ][0-9]*[-| ][0-9]*[-| ][0-9]*[-| ][0-9]*", ErrorMessage = "This is not a valid ISBN number!")]
