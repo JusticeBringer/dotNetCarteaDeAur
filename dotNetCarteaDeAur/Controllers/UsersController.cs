@@ -14,7 +14,7 @@ namespace dotNetCarteaDeAur.Controllers
     // poate fi accesat doar de catre Admin
     [Authorize(Roles = "Admin")]
     public class UsersController : Controller
-    {
+    {   
         private ApplicationDbContext ctx = new ApplicationDbContext();
         public ActionResult Index()
         {

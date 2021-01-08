@@ -17,40 +17,40 @@ namespace dotNetCarteaDeAur.Models
         public int Book_id { get; set; }
 
         [Required, 
-        MinLength(10, ErrorMessage = "Title cannot be less than 10"),
+        MinLength(5, ErrorMessage = "Title cannot be less than 5"),
         MaxLength(80, ErrorMessage = "Title cannot be more than 80")]
-        [RegularExpression(@"[ .a-zA-Z:-]{9,79}$", ErrorMessage = "This is not a valid book title!")]
+        // [RegularExpression(@"^([A-Za-z0-9\s\-_,\.;:()]+){4,79}$", ErrorMessage = "This is not a valid book title!")]
         // Title can contain letters, can have spaces between
-        // and contains letters characters in 10 to 80 length
+        // and contains letters characters in 5 to 80 length
         public string Title { get; set; }
 
         [Required,
         MinLength(4, ErrorMessage = "Author cannot be less than 4"),
         MaxLength(80, ErrorMessage = "Author cannot be more than 80")]
-        [RegularExpression(@"^[ .a-zA-Z:-]{3,79}$", ErrorMessage = "This is not a valid book author name!")]
+        // [RegularExpression(@"^[ .a-zA-Z:-]{3,79}$", ErrorMessage = "This is not a valid book author name!")]
         // Author can contain letters, can have spaces between
         // and contains letters characters in 4 to 80 length
         public string Author { get; set; }
 
-        [Required]
+        //[Required]
         // No validation here - using DateTime.TryParseExact at registering
         public DateTime PublishDate { get; set; }
 
-        [Required]
+        //[Required]
         [RegularExpression(@"[0-9]*[-| ][0-9]*[-| ][0-9]*[-| ][0-9]*[-| ][0-9]*", ErrorMessage = "This is not a valid ISBN number!")]
         public string ISBN { get; set; }
 
-        [Required]
+        //[Required]
         [RegularExpression(@"^\d*\.?\d*$", ErrorMessage = "This is not a valid price")]
         // starts with number, ends with number, accepts decimals
         public double Price { get; set; }
 
-        [Required]
+        //[Required]
         [RegularExpression(@"^\d\d*$", ErrorMessage = "This is not a book quantity")]
         // starts with number, ends with number
         public int Quantity { get; set; }
 
-        [Required]
+        //[Required]
         // No validation here - validation at file uploading
         public string ImagePath { get; set; }
 

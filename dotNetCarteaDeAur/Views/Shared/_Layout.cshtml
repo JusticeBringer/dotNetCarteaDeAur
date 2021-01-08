@@ -31,26 +31,24 @@
                     <a class="nav-link">@Html.ActionLink("Contact", "Contact", "Home")</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link">@Html.ActionLink("Collection", "Index", "Book")</a>
+                    <a class="nav-link">@Html.ActionLink("Shop", "Index", "Shop")</a>
                 </li>
 
                 @if (Request.IsAuthenticated)
                 {
                     if (User.IsInRole("Admin"))
                     {
-                        <li class="nav-item">
-                            <a class="nav-link">@Html.ActionLink("Database", "Index", "API")</a>
-                        </li>
-
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Users
+                                Database
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item ml-5" href="#">@Html.ActionLink("Customers", "Index", "Users")</a>
+                                <a class="dropdown-item ml-5" href="#">@Html.ActionLink("Books", "Index", "Book")</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item ml-5" href="#">@Html.ActionLink("Admins", "Index", "Users")</a>
                                 <a class="dropdown-item ml-5" href="#">@Html.ActionLink("Publishers", "Index", "Users")</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item ml-5" href="#">@Html.ActionLink("Users", "Index", "Users")</a>
+                                <a class="dropdown-item ml-5" href="#">@Html.ActionLink("All Database", "Index", "API")</a>
                             </div>
                         </li>
                     }

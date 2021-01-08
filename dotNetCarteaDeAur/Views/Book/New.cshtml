@@ -1,0 +1,26 @@
+﻿@model dotNetCarteaDeAur.Models.Book
+@{
+    ViewBag.Title = "Add new book";
+}
+
+<h2>@ViewBag.Title</h2>
+@using (Html.BeginForm(actionName: "New", controllerName: "Book", method: FormMethod.Post))
+{
+    @Html.Label("Title", "Book Title:")
+    <br />
+    @Html.TextBoxFor(b => b.Title, null, new { placeholder = "Type in the book's title", @class = "formcontrol" })
+    @Html.ValidationMessageFor(b => b.Title, "", new { @class = "text-danger" })
+    <br />
+
+    @Html.Label("Author", "Author:")
+    <br />
+    @Html.TextBoxFor(b => b.Author, null, new { placeholder = "Type in the book's author", @class = "formcontrol" })
+    @Html.ValidationMessageFor(b => b.Author, "", new { @class = "text-danger" })
+    <br />
+
+
+
+
+    <br />
+    <button class="btn btn-primary" type="submit">Create</button>
+}

@@ -4,13 +4,25 @@
     ViewBag.Title = "Details";
 }
 
-<h2>@ViewBag.Title about @Model.Title</h2>
+<h2>Details</h2>
 
+@Html.Label("Title", "Title:")
+<br />
+<p>@Model.Title</p>
+@Html.Label("Author", "Author:")
 <br />
 <p>@Model.Author</p>
+
+@using (Html.BeginForm(actionName: "Edit", controllerName: "Book", method: FormMethod.Get, routeValues:
+new { id = Model.Book_id }))
+{
+    <button style="margin-right:5px" class="btn btn-primary col-lg-1" type="submit">Update</button>
+}
 <br />
-<p>@Model.Price</p>
+@using (Html.BeginForm(actionName: "Delete", controllerName: "Book", method: FormMethod.Post, routeValues:
+new { id = Model.Book_id }))
+{
+    @Html.HttpMethodOverride(HttpVerbs.Delete)
+    <button class="btn btn-primary col-lg-1" type="submit">Delete</button>
+}
 <br />
-<p>@Model.ISBN</p>
-<br />
-<p>@Model.PublishDate</p>
