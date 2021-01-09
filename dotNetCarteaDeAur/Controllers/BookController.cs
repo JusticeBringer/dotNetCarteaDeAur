@@ -41,9 +41,9 @@ namespace dotNetCarteaDeAur.Controllers
                     bookRequest.Publisher = db.Publishers.FirstOrDefault(p => p.Pub_id.Equals(1));
                     db.Books.Add(bookRequest);
                     db.SaveChanges();
+
                     return RedirectToAction("Index");
                 }
-                return RedirectToAction("Index", "Home");
                 return View(bookRequest);
             }
             catch (DbEntityValidationException ex)
@@ -52,7 +52,6 @@ namespace dotNetCarteaDeAur.Controllers
                 string errorMessages = string.Join("; ", ex.EntityValidationErrors.SelectMany(x => x.ValidationErrors)
                                                                                   .Select(x => x.PropertyName + ": " + x.ErrorMessage));
                 return View(errorMessages);
-                return View(bookRequest);
             }
         }
 
@@ -106,10 +105,12 @@ namespace dotNetCarteaDeAur.Controllers
                 }
                 return View(bookRequest);
             }
-            catch (Exception e)
+            catch (DbEntityValidationException ex)
             {
-                Console.WriteLine(e);
-                return View(bookRequest);
+                string errorMessages = string.Join("; ", ex.EntityValidationErrors.SelectMany(x => x.ValidationErrors)
+                                                                                  .Select(x => x.PropertyName + ": " + x.ErrorMessage));
+                Console.WriteLine(ex);
+                return View(errorMessages);
             }
         }
         [HttpDelete]

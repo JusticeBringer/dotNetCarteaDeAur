@@ -32,22 +32,24 @@ namespace dotNetCarteaDeAur.Models
         // and contains letters characters in 4 to 80 length
         public string Author { get; set; }
 
+        // No validation here - using DateTime.TryParseExact at registering
+        public int PublishDate { get; set; }
 
-        //[Required]
+        [Required]
         [RegularExpression(@"[0-9]*[-| ][0-9]*[-| ][0-9]*[-| ][0-9]*[-| ][0-9]*", ErrorMessage = "This is not a valid ISBN number!")]
         public string ISBN { get; set; }
 
-        //[Required]
+        [Required]
         [RegularExpression(@"^\d*\.?\d*$", ErrorMessage = "This is not a valid price")]
         // starts with number, ends with number, accepts decimals
         public double Price { get; set; }
 
-        //[Required]
+        [Required]
         [RegularExpression(@"^\d\d*$", ErrorMessage = "This is not a book quantity")]
         // starts with number, ends with number
         public int Quantity { get; set; }
 
-        //[Required]
+        [Required]
         // No validation here - validation at file uploading
         public string ImagePath { get; set; }
 

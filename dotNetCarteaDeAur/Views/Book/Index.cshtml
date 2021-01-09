@@ -8,9 +8,9 @@
 <br />
 @using (Html.BeginForm(actionName: "New", controllerName: "Book", method: FormMethod.Get))
 {
-<button class="btn btn-primary m-2">
-    @Html.ActionLink("Add book", "New")
-</button>
+    <button class="btn btn-primary m-2">
+        @Html.ActionLink("Add book", "New")
+    </button>
 }
 <br />
 
@@ -36,12 +36,19 @@
                 <p>@book.ISBN</p>
 
                 @Html.Label("Publish_date", "Publish Date:")
-                @* <p>@book.PublishDate</p> *@
-                @using (Html.BeginForm(actionName: "Details", controllerName: "Book", method: FormMethod.Get, routeValues: new { id = book.Book_id }))
+                <p>@book.PublishDate</p>
+
+                @using (Html.BeginForm(actionName: "Edit", controllerName: "Book", method: FormMethod.Get, routeValues: new { id = book.Book_id }))
                 {
-                    <button class="btn btn-primary m-2">Details</button>
+                    <button style="margin-right:5px" class="btn btn-primary m-2" type="submit">Update</button>
+                }
+                @using (Html.BeginForm(actionName: "Delete", controllerName: "Book", method: FormMethod.Post, routeValues:
+                new { id = book.Book_id }))
+                {
+                    @Html.HttpMethodOverride(HttpVerbs.Delete)
+                    <button class="btn btn-primary m-2" type="submit">Delete</button>
                 }
             </div>
-                </div>
-            }
         </div>
+    }
+</div>

@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Publishers";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="row">
+    @foreach (var pub in ViewBag.Publishers)
+    {
+        <div class="col-md-3">
+            <div class="mt-3">
+                <h3>@pub.Pub_name</h3>
+                @Html.Label("Pub_name", "Publisher name:")
+                <p>@pub.Pub_name</p>
+
+                <button class="btn btn-primary m-2">
+                    @Html.ActionLink("Publishers contact", "Index", "PubContact")
+                </button>
+            </div>
+        </div>
+    }
+</div>

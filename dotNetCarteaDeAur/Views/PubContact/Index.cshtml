@@ -1,22 +1,26 @@
 ﻿
 @{
-    ViewBag.Title = "Customers";
+    ViewBag.Title = "Publisher Contacts";
+    var counter = 0;
 }
 
 <h2>@ViewBag.Title</h2>
 
 <div class="row">
-    @foreach (var cust in ViewBag.Customers)
+    @foreach (var pub_con in ViewBag.PubContacts)
     {
+        counter++;
         <div class="col-md-3">
             <div class="mt-3">
-                <h3>@cust.Cust_id</h3>
-                @Html.Label("First_name", "First name:")
-                <p>@cust.First_name</p>
+                <h3>@counter</h3>
 
-                @Html.Label("Last_name", "Last name:")
-                <p>@cust.Last_name</p>
+                @Html.Label("Pub_email", "Publisher email:")
+                <p>@pub_con.Pub_email</p>
+
+                @Html.Label("Pub_phone", "Publisher phone:")
+                <p>@pub_con.Pub_phone</p>
                 <br />
+
                 @*@using (Html.BeginForm(actionName: "Details", controllerName: "Book", method: FormMethod.Get, routeValues: new { id = book.Book_id }))
                     {
                         <button class="btn btn-primary m-2">Details</button>
