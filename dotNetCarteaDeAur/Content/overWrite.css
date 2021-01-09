@@ -40,5 +40,9 @@ li > a:hover {
 .bg-primary, .btn-primary {
     background-color: #c4b133 !important;
     border-color: #c4b133 !important;
+    color: white !important;
 }
 
+.btn-primary a {
+    color: white !important;
+}

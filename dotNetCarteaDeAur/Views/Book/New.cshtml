@@ -1,0 +1,56 @@
+﻿@model dotNetCarteaDeAur.Models.Book
+@{
+    ViewBag.Title = "Add new book";
+}
+
+<h2>@ViewBag.Title</h2>
+@using (Html.BeginForm(actionName: "New", controllerName: "Book", method: FormMethod.Post))
+{
+    @Html.Label("Title", "Book Title:")
+    <br />
+    @Html.TextBoxFor(b => b.Title, new { placeholder = "Type in the book's title", @class = "formcontrol" })
+    @Html.ValidationMessageFor(b => b.Title, "", new { @class = "text-danger" })
+    <br />
+
+    @Html.Label("Author", "Author:")
+    <br />
+    @Html.TextBoxFor(b => b.Author, new { placeholder = "Type in the book's author", @class = "formcontrol" })
+    @Html.ValidationMessageFor(b => b.Author, "", new { @class = "text-danger" })
+    <br />
+
+    @Html.Label("PublishDate", "Publish Date:")
+    <br />
+    @Html.TextBoxFor(b => b.PublishDate, new { placeholder = "2014", @class = "formcontrol" })
+    @Html.ValidationMessageFor(b => b.PublishDate, "", new { @class = "text-danger" })
+    <br />
+
+
+    @* TO DO Validare proprie *@
+
+    @Html.Label("ISBN", "ISBN:")
+    <br />
+    @Html.TextBoxFor(b => b.ISBN, new { placeholder = "978-3-16-148410-0", @class = "formcontrol" })
+    @Html.ValidationMessageFor(b => b.ISBN, "", new { @class = "text-danger" })
+    <br />
+
+    @Html.Label("Price", "Price:")
+    <br />
+    @Html.TextBoxFor(b => b.Price, new { placeholder = "Type in the book's price", @class = "formcontrol" })
+    @Html.ValidationMessageFor(b => b.Price, "", new { @class = "text-danger" })
+    <br />
+
+    @Html.Label("Quantity", "Quantity:")
+    <br />
+    @Html.TextBoxFor(b => b.Quantity, new { placeholder = "Type in the book's quantity", @class = "formcontrol" })
+    @Html.ValidationMessageFor(b => b.Quantity, "", new { @class = "text-danger" })
+    <br />
+
+    @Html.Label("ImagePath", "Image Path:")
+    <br />
+    @Html.TextBoxFor(b => b.ImagePath, new { placeholder = "Type book's image path", @class = "formcontrol" })
+    @Html.ValidationMessageFor(b => b.ImagePath, "", new { @class = "text-danger" })
+    <br />
+
+    <br />
+    <button class="btn btn-primary" type="submit">Create</button>
+}
