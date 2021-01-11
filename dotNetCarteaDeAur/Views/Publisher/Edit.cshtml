@@ -1,0 +1,30 @@
+﻿@model dotNetCarteaDeAur.Models.Publisher
+
+@{
+    ViewBag.Title = "Edit publisher";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm(
+    actionName: "Edit",
+    controllerName: "Publisher"))
+{
+    @Html.HttpMethodOverride(HttpVerbs.Put)
+
+    @Html.HiddenFor(p => p.Pub_id);
+
+    @Html.Label("Pub_name", "Publisher name:")
+    <br />
+    @Html.EditorFor(p => p.Pub_name, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(p => p.Pub_name, "", new { @class = "text-danger" })
+
+    <br />
+    @Html.Label("Pub_Contact", "Publisher contact information:")
+    <br />
+    @Html.EditorFor(p => p.Pub_Contact, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(p => p.Pub_Contact, "", new { @class = "text-danger" })
+
+    <br />
+    <button class="btn btn-primary" type="submit"> Update </button>
+}
