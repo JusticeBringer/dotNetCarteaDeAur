@@ -1,4 +1,6 @@
-﻿@{
+﻿@model dotNetCarteaDeAur.Models.ApplicationUser
+
+@{
     ViewBag.Title = "All users";
 }
 <h2>@ViewBag.Title</h2>
@@ -7,20 +9,24 @@
 <h3>Admins</h3>
 <table class="table">
     <thead>
-        <th>Username</th>
-        <th>Email</th>
-        <th>Update</th>
-        <th>Details</th>
+    <th>Username</th>
+    <th>Email</th>
+    <th>Update</th>
+    <th>Details</th>
     </thead>
     <tbody>
         @foreach (var user in ViewBag.UsersList)
         {
-            <tr>
-                <td>@user.UserName</td>
-                <td>@user.Email</td>
-                <td>@Html.ActionLink("Update", "Edit", new { id = user.Id })</td>
-                <td>@Html.ActionLink("View details", "Details", new { id = user.Id })</td>
-            </tr>
+            if (User.IsInRole("Admin"))
+            // if (ViewBag.UserRole == "Admin")
+            {
+                <tr>
+                    <td>@user.UserName</td>
+                    <td>@user.Email</td>
+                    <td>@Html.ActionLink("Update", "Edit", new { id = user.Id })</td>
+                    <td>@Html.ActionLink("View details", "Details", new { id = user.Id })</td>
+                </tr>
+            }
         }
     </tbody>
 </table>
@@ -28,3 +34,25 @@
 <br />
 <h3>Customers</h3>
 <hr />
+<table class="table">
+    <thead>
+    <th>Username</th>
+    <th>Email</th>
+    <th>Update</th>
+    <th>Details</th>
+    </thead>
+    <tbody>
+        @foreach (var user in ViewBag.UsersList)
+        {
+            if (User.IsInRole("User"))
+            {
+                <tr>
+                    <td>@user.UserName</td>
+                    <td>@user.Email</td>
+                    <td>@Html.ActionLink("Update", "Edit", new { id = user.Id })</td>
+                    <td>@Html.ActionLink("View details", "Details", new { id = user.Id })</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
