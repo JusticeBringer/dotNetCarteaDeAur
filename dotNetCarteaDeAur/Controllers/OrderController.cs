@@ -18,5 +18,18 @@ namespace dotNetCarteaDeAur.Controllers
 
             return View();
         }
+
+        [HttpDelete]
+        public ActionResult Delete(int id)
+        {
+            Order order = db.Orders.Find(id);
+            if (order != null)
+            {
+                db.Orders.Remove(order);
+                db.SaveChanges();
+                return RedirectToAction("Index", "Order");
+            }
+            return HttpNotFound("Couldn't find the order with id " + id.ToString());
+        }
     }
 }

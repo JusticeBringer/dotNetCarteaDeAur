@@ -21,10 +21,15 @@
                 <p>@pub_con.Pub_phone</p>
                 <br />
 
-                @*@using (Html.BeginForm(actionName: "Details", controllerName: "Book", method: FormMethod.Get, routeValues: new { id = book.Book_id }))
-                    {
-                        <button class="btn btn-primary m-2">Details</button>
-                    }*@
+                @using (Html.BeginForm(
+                    actionName: "Delete",
+                    controllerName: "PubContact",
+                    method: FormMethod.Post,
+                    routeValues: new { id = pub_con.Pub_contact_id }))
+                {
+                    @Html.HttpMethodOverride(HttpVerbs.Delete)
+                    <button class="btn btn-primary" type="submit"> Delete </button>
+                }
             </div>
         </div>
     }

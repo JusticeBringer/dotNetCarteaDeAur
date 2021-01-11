@@ -7,7 +7,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using System.Web.Security;
 
 namespace dotNetCarteaDeAur.Controllers
 {
@@ -44,6 +44,27 @@ namespace dotNetCarteaDeAur.Controllers
 
             return HttpNotFound("Coudn't find the user with given id!");
         }
+
+        public ActionResult Delete(string username)
+        {
+            if (username != null)
+            {
+                try
+                {
+                    Membership.DeleteUser(username, true);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    return View("Index");
+                }
+
+                return RedirectToAction("Index", "Home");
+            }
+
+            return HttpNotFound("Couldn't find user with the username " + username.ToString());
+        }
+
         public ActionResult Edit(string id)
         {
             if (String.IsNullOrEmpty(id))

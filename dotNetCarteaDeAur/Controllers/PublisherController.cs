@@ -18,5 +18,21 @@ namespace dotNetCarteaDeAur.Controllers
 
             return View();
         }
+
+        [HttpDelete]
+        public ActionResult Delete(int id)
+        {
+            Publisher publisher = db.Publishers.Find(id);
+
+            if (publisher != null)
+            {
+                db.Publishers.Remove(publisher);
+                db.SaveChanges();
+
+                return RedirectToAction("Index", "Publisher");
+            }
+
+            return HttpNotFound("Couldn't find the publisher with the id " + id.ToString());
+        }
     }
 }

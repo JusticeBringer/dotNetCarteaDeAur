@@ -17,10 +17,14 @@
                 @Html.Label("Last_name", "Last name:")
                 <p>@cust.Last_name</p>
                 <br />
-                @*@using (Html.BeginForm(actionName: "Details", controllerName: "Book", method: FormMethod.Get, routeValues: new { id = book.Book_id }))
-                    {
-                        <button class="btn btn-primary m-2">Details</button>
-                    }*@
+
+
+                @using (Html.BeginForm(actionName: "Delete", controllerName: "Customers", method: FormMethod.Post, routeValues:
+                    new { id = cust.Cust_id }))
+                {
+                    @Html.HttpMethodOverride(HttpVerbs.Delete)
+                    <button class="btn btn-primary m-2" type="submit">Delete</button>
+                }
             </div>
         </div>
     }
