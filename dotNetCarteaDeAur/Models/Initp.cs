@@ -95,6 +95,58 @@ namespace dotNetCarteaDeAur.Models
                 Publisher = OD
             };
 
+            Book b5 = new Book
+            {
+                Book_id = 5,
+                Title = "Toiagul Odraslit",
+                Author = "Pr. Gheorghe Coltea",
+                PublishDate = 2015,
+                ISBN = "978-3-16-148430-0",
+                Price = 14.5,
+                Quantity = 30,
+                ImagePath = "/Assets/Images/egumenita1.jpg",
+                Publisher = Egumenita
+            };
+
+            Book b6 = new Book
+            {
+                Book_id = 6,
+                Title = "Un episcop neconformist",
+                Author = "Egumenul Damaschin",
+                PublishDate = 2015,
+                ISBN = "978-3-16-138430-0",
+                Price = 14.5,
+                Quantity = 30,
+                ImagePath = "/Assets/Images/egumenita2.jpg",
+                Publisher = Egumenita
+            };
+
+            Book b7 = new Book
+            {
+                Book_id = 7,
+                Title = "Craciunul si Pastile aduc bucuriile",
+                Author = "Arhiepiscopul Andrei",
+                PublishDate = 2014,
+                ISBN = "978-3-16-128430-0",
+                Price = 14.5,
+                Quantity = 30,
+                ImagePath = "/Assets/Images/egumenita3.jpg",
+                Publisher = Egumenita
+            };
+
+            Book b8 = new Book
+            {
+                Book_id = 8,
+                Title = "Spovedania unui avocat",
+                Author = "Mirela Chelaru",
+                PublishDate = 2015,
+                ISBN = "978-3-16-108430-0",
+                Price = 14.5,
+                Quantity = 30,
+                ImagePath = "/Assets/Images/egumenita4.jpg",
+                Publisher = Egumenita
+            };
+
             // Create customers
             Customer c1 = new Customer
             {
@@ -185,7 +237,7 @@ namespace dotNetCarteaDeAur.Models
             // Books list
             List<Book> books = new List<Book>()
             {
-                b1, b2, b3, b4
+                b1, b2, b3, b4, b5, b6, b7, b8
             };
 
             // Customers list
