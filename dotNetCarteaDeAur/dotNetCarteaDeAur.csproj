@@ -178,6 +178,7 @@
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\PubContactController.cs" />
     <Compile Include="Controllers\PublisherController.cs" />
     <Compile Include="Controllers\ShopController.cs" />
@@ -472,6 +473,7 @@
     <Content Include="Views\Book\Delete.cshtml" />
     <Content Include="Views\Publisher\Index.cshtml" />
     <Content Include="Views\PubContact\Index.cshtml" />
+    <Content Include="Views\Order\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
