@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 using System.Data.Entity;
+using dotNetCarteaDeAur.Models.MyValidation;
 
 namespace dotNetCarteaDeAur.Models
 {   
@@ -32,7 +33,7 @@ namespace dotNetCarteaDeAur.Models
         // and contains letters characters in 4 to 80 length
         public string Author { get; set; }
 
-        // No validation here - using DateTime.TryParseExact at registering
+        [PublishYearValidator]
         public int PublishDate { get; set; }
 
         [Required]
@@ -50,7 +51,7 @@ namespace dotNetCarteaDeAur.Models
         public int Quantity { get; set; }
 
         [Required]
-        // No validation here - validation at file uploading
+        [ImagePathValidator]
         public string ImagePath { get; set; }
 
         // one to many
