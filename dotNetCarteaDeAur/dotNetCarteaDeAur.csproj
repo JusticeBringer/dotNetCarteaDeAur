@@ -192,6 +192,8 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Initp.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MyValidation\ImagePathValidator.cs" />
+    <Compile Include="Models\MyValidation\PublishYearValidator.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Publisher.cs" />
     <Compile Include="Models\Customer.cs" />
