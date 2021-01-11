@@ -45,6 +45,12 @@
                             snd_count++;
                         }
                     }
+                    @using (Html.BeginForm(actionName: "Delete", controllerName: "Order", method: FormMethod.Post, routeValues:
+                    new { id = order.Ord_id }))
+                    {
+                        @Html.HttpMethodOverride(HttpVerbs.Delete)
+                        <button class="btn btn-primary m-2" type="submit">Delete</button>
+                    }
                 </div>
             </div>
         }

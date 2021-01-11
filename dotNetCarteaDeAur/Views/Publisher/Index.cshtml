@@ -17,6 +17,13 @@
                 <button class="btn btn-primary m-2">
                     @Html.ActionLink("Publishers contact", "Index", "PubContact")
                 </button>
+
+                @using (Html.BeginForm(actionName: "Delete", controllerName: "Publisher", method: FormMethod.Post, routeValues:
+                    new { id = pub.Pub_id }))
+                {
+                    @Html.HttpMethodOverride(HttpVerbs.Delete)
+                    <button class="btn btn-primary m-2" type="submit">Delete</button>
+                }
             </div>
         </div>
     }

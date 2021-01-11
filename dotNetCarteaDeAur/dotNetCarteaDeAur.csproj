@@ -476,6 +476,10 @@
     <Content Include="Views\Publisher\Index.cshtml" />
     <Content Include="Views\PubContact\Index.cshtml" />
     <Content Include="Views\Order\Index.cshtml" />
+    <Content Include="Views\Order\Delete.cshtml" />
+    <Content Include="Views\Customers\Delete.cshtml" />
+    <Content Include="Views\Publisher\Delete.cshtml" />
+    <Content Include="Views\PubContact\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
