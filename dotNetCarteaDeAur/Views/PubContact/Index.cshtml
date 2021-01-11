@@ -19,7 +19,22 @@
 
                 @Html.Label("Pub_phone", "Publisher phone:")
                 <p>@pub_con.Pub_phone</p>
+
+                @Html.Label("Pub_city", "Publisher city:")
+                <p>@pub_con.Pub_city</p>
+
+                @Html.Label("Pub_street", "Publisher street:")
+                <p>@pub_con.Pub_street</p>
                 <br />
+
+                @using (Html.BeginForm(
+                    actionName: "Edit",
+                    controllerName: "PubContact",
+                    method: FormMethod.Get,
+                    routeValues: new { id = pub_con.Pub_contact_id }))
+                {
+                    <button class="btn btn-primary m-2" type="submit"> Update </button>
+                }
 
                 @using (Html.BeginForm(
                     actionName: "Delete",
@@ -28,7 +43,7 @@
                     routeValues: new { id = pub_con.Pub_contact_id }))
                 {
                     @Html.HttpMethodOverride(HttpVerbs.Delete)
-                    <button class="btn btn-primary" type="submit"> Delete </button>
+                    <button class="btn btn-primary m-2" type="submit"> Delete </button>
                 }
             </div>
         </div>

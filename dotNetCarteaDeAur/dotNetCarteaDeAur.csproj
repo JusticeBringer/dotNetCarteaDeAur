@@ -480,6 +480,9 @@
     <Content Include="Views\Customers\Delete.cshtml" />
     <Content Include="Views\Publisher\Delete.cshtml" />
     <Content Include="Views\PubContact\Delete.cshtml" />
+    <Content Include="Views\Customers\Edit.cshtml" />
+    <Content Include="Views\Publisher\Edit.cshtml" />
+    <Content Include="Views\PubContact\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

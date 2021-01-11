@@ -18,6 +18,15 @@
                     @Html.ActionLink("Publishers contact", "Index", "PubContact")
                 </button>
 
+                @using (Html.BeginForm(
+                    actionName: "Edit",
+                    controllerName: "Publisher",
+                    method: FormMethod.Get,
+                    routeValues: new { id = pub.Pub_id }))
+                {
+                    <button class="btn btn-primary m-2" type="submit"> Update </button>
+                }
+
                 @using (Html.BeginForm(actionName: "Delete", controllerName: "Publisher", method: FormMethod.Post, routeValues:
                     new { id = pub.Pub_id }))
                 {

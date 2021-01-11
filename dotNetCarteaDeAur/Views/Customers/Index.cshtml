@@ -16,8 +16,24 @@
 
                 @Html.Label("Last_name", "Last name:")
                 <p>@cust.Last_name</p>
+
+                @Html.Label("City", "City:")
+                <p>@cust.City</p>
+
+                @Html.Label("Street", "Street:")
+                <p>@cust.Street</p>
+
+                @Html.Label("P_code", "Postal code:")
+                <p>@cust.P_code</p>
+
+                @Html.Label("Phone", "Phone:")
+                <p>@cust.Phone</p>
                 <br />
 
+                @using (Html.BeginForm(actionName: "Edit", controllerName: "Customers", method: FormMethod.Get, routeValues: new { id = cust.Cust_id }))
+                {
+                    <button class="btn btn-primary m-2" type="submit">Update</button>
+                }
 
                 @using (Html.BeginForm(actionName: "Delete", controllerName: "Customers", method: FormMethod.Post, routeValues:
                     new { id = cust.Cust_id }))
