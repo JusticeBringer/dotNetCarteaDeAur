@@ -14,6 +14,17 @@ namespace dotNetCarteaDeAur.Models
         // No need for validation - it is not completed by user
         public int Cust_id { get; set; }
 
+        [Required]
+        [RegularExpression(@"^\S+@\S+$", ErrorMessage = "This is not a valid email!")]
+        // Email must be 5 to 80 length and have email format
+        public string Email { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [DataType(DataType.Password)]
+        // Minimum six characters, at least one letter and one number:
+        public string Password { get; set; }
+
         [Required,
         MinLength(2, ErrorMessage = "First name cannot be less than 2"),
         MaxLength(50, ErrorMessage = "First name cannot be more than 50")]

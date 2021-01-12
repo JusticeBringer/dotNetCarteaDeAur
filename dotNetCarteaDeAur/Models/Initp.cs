@@ -53,7 +53,7 @@ namespace dotNetCarteaDeAur.Models
                 Author = "Pr. Iosif Trifa",
                 PublishDate = 2015,
                 ISBN = "978-3-16-148410-0",
-                Price = 14.5,
+                Price = 15,
                 Quantity = 24,
                 ImagePath = "/Assets/Images/ceEsteOasteaDomnului.png",
                 Publisher = OD
@@ -65,7 +65,7 @@ namespace dotNetCarteaDeAur.Models
                 Author = "Pr. Iosif Trifa",
                 PublishDate = 2016,
                 ISBN = "978-3-16-148410-0",
-                Price = 14.5,
+                Price = 14,
                 Quantity = 45,
                 ImagePath = "/Assets/Images/spreCanaan.png",
                 Publisher = OD
@@ -77,7 +77,7 @@ namespace dotNetCarteaDeAur.Models
                 Author = "Pr. Iosif Trifa",
                 PublishDate = 2014,
                 ISBN = "978-3-16-148410-0",
-                Price = 14.5,
+                Price = 8,
                 Quantity = 20,
                 ImagePath = "/Assets/Images/sabiaDuhului.png",
                 Publisher = OD
@@ -89,7 +89,7 @@ namespace dotNetCarteaDeAur.Models
                 Author = "Pr. Iosif Trifa",
                 PublishDate = 2013,
                 ISBN = "978-3-16-148410-0",
-                Price = 14.5,
+                Price = 7,
                 Quantity = 30,
                 ImagePath = "/Assets/Images/maiLangaDomnulMeu.jpg",
                 Publisher = OD
@@ -102,8 +102,8 @@ namespace dotNetCarteaDeAur.Models
                 Author = "Pr. Gheorghe Coltea",
                 PublishDate = 2015,
                 ISBN = "978-3-16-148430-0",
-                Price = 14.5,
-                Quantity = 30,
+                Price = 33,
+                Quantity = 15,
                 ImagePath = "/Assets/Images/egumenita1.jpg",
                 Publisher = Egumenita
             };
@@ -115,8 +115,8 @@ namespace dotNetCarteaDeAur.Models
                 Author = "Egumenul Damaschin",
                 PublishDate = 2015,
                 ISBN = "978-3-16-138430-0",
-                Price = 14.5,
-                Quantity = 30,
+                Price = 10,
+                Quantity = 19,
                 ImagePath = "/Assets/Images/egumenita2.jpg",
                 Publisher = Egumenita
             };
@@ -128,8 +128,8 @@ namespace dotNetCarteaDeAur.Models
                 Author = "Arhiepiscopul Andrei",
                 PublishDate = 2014,
                 ISBN = "978-3-16-128430-0",
-                Price = 14.5,
-                Quantity = 30,
+                Price = 17,
+                Quantity = 35,
                 ImagePath = "/Assets/Images/egumenita3.jpg",
                 Publisher = Egumenita
             };
@@ -141,8 +141,8 @@ namespace dotNetCarteaDeAur.Models
                 Author = "Mirela Chelaru",
                 PublishDate = 2015,
                 ISBN = "978-3-16-108430-0",
-                Price = 14.5,
-                Quantity = 30,
+                Price = 12,
+                Quantity = 40,
                 ImagePath = "/Assets/Images/egumenita4.jpg",
                 Publisher = Egumenita
             };
@@ -150,6 +150,8 @@ namespace dotNetCarteaDeAur.Models
             // Create customers
             Customer c1 = new Customer
             {
+                Email = "johnHello@gmail.com",
+                Password = "Cheiedesecuritat3#",
                 Cust_id = 1,
                 First_name = "John",
                 Last_name = "Lenon",
@@ -160,6 +162,8 @@ namespace dotNetCarteaDeAur.Models
             };
             Customer c2 = new Customer
             {
+                Email = "vasileHello@gmail.com",
+                Password = "Cheiedesecuritat3#",
                 Cust_id = 2,
                 First_name = "Vasile",
                 Last_name = "Conan",
@@ -170,6 +174,8 @@ namespace dotNetCarteaDeAur.Models
             };
             Customer c3 = new Customer
             {
+                Email = "jordanHello@gmail.com",
+                Password = "Cheiedesecuritat3#",
                 Cust_id = 3,
                 First_name = "Jordan",
                 Last_name = "Klaw",
@@ -189,7 +195,10 @@ namespace dotNetCarteaDeAur.Models
                 Ord_arrived = new DateTime(2014, 10, 30),
                 Status = "Delivered",
                 Cust_id = 1,
-                Quantity_bought = "2 3",
+                Quantity_bought = new List<int>()
+                { 
+                    1, 2
+                },
                 Books = new List<Book>()
                 {
                     b1, b2
@@ -204,7 +213,10 @@ namespace dotNetCarteaDeAur.Models
                 Ord_arrived = new DateTime(2013, 11, 30),
                 Status = "Delivered",
                 Cust_id = 2,
-                Quantity_bought = "1 2",
+                Quantity_bought = new List<int>()
+                {
+                    4, 2
+                },
                 Books = new List<Book>()
                 {
                     b2, b3
@@ -217,7 +229,10 @@ namespace dotNetCarteaDeAur.Models
                 Ord_price = 105.23,
                 Ord_placed = new DateTime(2012, 10, 24),
                 Cust_id = 3,
-                Quantity_bought = "1 6",
+                Quantity_bought = new List<int>()
+                {
+                    1, 3
+                },
                 Books = new List<Book>()
                 {
                     b1, b4

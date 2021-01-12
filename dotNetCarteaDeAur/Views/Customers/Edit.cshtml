@@ -16,6 +16,16 @@
     @Html.HiddenFor(c => c.Cust_id)
     <br />
 
+    @Html.Label("Email", "Email:")
+    <br />
+    @Html.EditorFor(c => c.Email, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(c => c.Email, "", new { @class = "text-danger" })
+
+    @Html.Label("Password", "Password:")
+    <br />
+    @Html.EditorFor(c => c.Password, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(c => c.Password, "", new { @class = "text-danger" })
+
     @Html.Label("First_name", "First name:")
     <br />
     @Html.EditorFor(c => c.First_name, new { htmlAttributes = new { @class = "form-control" } })
@@ -45,7 +55,7 @@
     <br />
     @Html.EditorFor(c => c.Phone, new { htmlAttributes = new { @class = "form-control" } })
     @Html.ValidationMessageFor(c => c.Phone, "", new { @class = "text-danger" })
-    
+
     <br />
     <button class="btn btn-primary" type="submit">Update</button>
 }

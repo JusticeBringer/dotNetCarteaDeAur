@@ -20,7 +20,7 @@ namespace dotNetCarteaDeAur.Models
         [Required, 
         MinLength(5, ErrorMessage = "Title cannot be less than 5"),
         MaxLength(80, ErrorMessage = "Title cannot be more than 80")]
-        // [RegularExpression(@"^([A-Za-z0-9\s\-_,\.;:()]+){4,79}$", ErrorMessage = "This is not a valid book title!")]
+        [RegularExpression(@"^([A-Za-z0-9\s\-_,\.;:()]+){4,79}$", ErrorMessage = "This is not a valid book title!")]
         // Title can contain letters, can have spaces between
         // and contains letters characters in 5 to 80 length
         public string Title { get; set; }
@@ -28,7 +28,7 @@ namespace dotNetCarteaDeAur.Models
         [Required,
         MinLength(4, ErrorMessage = "Author cannot be less than 4"),
         MaxLength(80, ErrorMessage = "Author cannot be more than 80")]
-        // [RegularExpression(@"^[ .a-zA-Z:-]{3,79}$", ErrorMessage = "This is not a valid book author name!")]
+        [RegularExpression(@"^[ .a-zA-Z:-]{3,79}$", ErrorMessage = "This is not a valid book author name!")]
         // Author can contain letters, can have spaces between
         // and contains letters characters in 4 to 80 length
         public string Author { get; set; }

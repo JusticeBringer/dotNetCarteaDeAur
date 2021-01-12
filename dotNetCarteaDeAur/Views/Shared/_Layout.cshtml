@@ -66,6 +66,18 @@
 
             </ul>
             <ul class="navbar-nav mr-5">
+                @if (Request.IsAuthenticated)
+                {
+                    if (User.IsInRole("User"))
+                    {
+                        <li class="nav-item mr-2">
+                            <a class="nav-link"> @Html.ActionLink("My orders", "Index", "MyOrders")</a>
+                        </li>
+                        <li class="nav-item mr-5">
+                            <a class="nav-link"> @Html.ActionLink("Cart", "Index", "Cart") <i class="fa fa-shopping-cart" style="font-size:24px;color:white"> </i></a>
+                        </li>
+                    }
+                }
                 @Html.Partial("_LoginPartial")
             </ul>
         </div>

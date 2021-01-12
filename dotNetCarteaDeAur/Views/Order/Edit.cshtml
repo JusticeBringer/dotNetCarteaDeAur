@@ -1,0 +1,76 @@
+﻿@model dotNetCarteaDeAur.Models.Order
+@{
+    ViewBag.Title = "Edit order";
+}
+
+<h2>@ViewBag.Title</h2>
+@using (Html.BeginForm(actionName: "Edit", controllerName: "Order"))
+{
+    @Html.HttpMethodOverride(HttpVerbs.Put)
+
+    @Html.HiddenFor(b => b.Ord_id)
+    <br />
+
+    @Html.Label("Ord_price", "Order price:")
+    <br />
+    @Html.EditorFor(b => b.Ord_price, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(b => b.Ord_price, "", new { @class = "text-danger" })
+    <br />
+
+    @Html.HiddenFor(b => b.Ord_placed)
+    @Html.HiddenFor(b => b.Ord_arrived)
+
+    @Html.Label("Status", "Status:")
+    <br />
+    @Html.Editor("Status", new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(b => b.Status, "", new { @class = "text-danger" })
+    <br />
+
+    @Html.HiddenFor(b => b.Cust_id)
+    @Html.HiddenFor(b => b.Quantity_bought)
+
+    @Html.Label("Books", "Books:")
+    <br />
+
+
+    @Html.Label("Customer", "Customer:")
+    <br />
+
+    @Html.HiddenFor(b => b.Customer.Cust_id)
+
+    @Html.Label("Customer.Email", "Customer Email:")
+    <br />
+    @Html.Editor("Customer.Email", new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(b => b.Customer.Email, "", new { @class = "text-danger" })
+    <br />
+
+    @Html.Label("Customer.Password", "Customer.Password")
+    <br />
+    @Html.Editor("Customer.Password", new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(b => b.Customer.Password, "", new { @class = "text-danger" })
+    <br />
+
+    @Html.Editor("Customer.First_name", new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(b => b.Customer.First_name, "", new { @class = "text-danger" })
+    <br />
+
+    @Html.Editor("Customer.Last_name", new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(b => b.Customer.Last_name, "", new { @class = "text-danger" })
+    <br />
+
+    @Html.Editor("Customer.City", new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(b => b.Customer.City, "", new { @class = "text-danger" })
+    <br />
+    @Html.Editor("Customer.Street", new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(b => b.Customer.Street, "", new { @class = "text-danger" })
+    <br />
+    @Html.Editor("Customer.P_code", new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(b => b.Customer.P_code, "", new { @class = "text-danger" })
+    <br />
+    @Html.Editor("Customer.Phone", new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(b => b.Customer.Phone, "", new { @class = "text-danger" })
+    <br />
+
+    <br />
+    <button class="btn btn-primary" type="submit">Update</button>
+}

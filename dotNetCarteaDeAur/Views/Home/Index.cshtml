@@ -29,7 +29,7 @@
                                 <p>@book.Author</p>
                                 @if (Request.IsAuthenticated)
                                 {
-                                    <button class="btn"><i class="fa fa-folder"></i> Add to cart</button>
+                                    <button class="btn btn-primary" type="submit"><i class="fa fa-folder"></i> @Html.ActionLink("Go to cart", "Index", "Cart")</button>
                                 }
                             </div>
                         </div>

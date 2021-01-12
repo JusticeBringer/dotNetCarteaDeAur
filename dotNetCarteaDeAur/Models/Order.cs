@@ -1,4 +1,5 @@
-﻿using System;
+﻿using dotNetCarteaDeAur.Models.MyValidation;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -34,14 +35,12 @@ namespace dotNetCarteaDeAur.Models
         #pragma warning restore CS8632 // The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
 
         [Required]
-        [RegularExpression(@"^[\d\s]+$", ErrorMessage = "This is not a valid quantity bought!")]
-        // Quantity has to start with numbers and end with numbers
+        [QuantityValidator]
         // "2 8 12 4" meaning is that user bought 2, 8, 12, 4 books of the Books array
-        public string Quantity_bought { set; get; }
+        public List<int> Quantity_bought { set; get; }
 
         // one to many
         [Column("Cust_id")]
-        // No need for validation - it is not completed by user
         public int Cust_id { get; set; }
         public virtual Customer Customer { get; set; }
 
