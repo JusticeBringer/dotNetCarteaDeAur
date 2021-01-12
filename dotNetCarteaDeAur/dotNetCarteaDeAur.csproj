@@ -175,9 +175,11 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\APIController.cs" />
     <Compile Include="Controllers\BookController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MyOrdersController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\PubContactController.cs" />
     <Compile Include="Controllers\PublisherController.cs" />
@@ -189,11 +191,14 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\API.cs" />
     <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Initp.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MyOrders.cs" />
     <Compile Include="Models\MyValidation\ImagePathValidator.cs" />
     <Compile Include="Models\MyValidation\PublishYearValidator.cs" />
+    <Compile Include="Models\MyValidation\QuantityValidator.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Publisher.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -483,6 +488,10 @@
     <Content Include="Views\Customers\Edit.cshtml" />
     <Content Include="Views\Publisher\Edit.cshtml" />
     <Content Include="Views\PubContact\Edit.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Cart\New.cshtml" />
+    <Content Include="Views\MyOrders\Index.cshtml" />
+    <Content Include="Views\Order\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -7,10 +7,10 @@ using System.Web.Mvc;
 
 namespace dotNetCarteaDeAur.Controllers
 {
-    public class ShopController : Controller
+    public class MyOrdersController : Controller
     {
-        // GET: Shop
         private DbCtx db = new DbCtx();
+        private ApplicationDbContext ctx = new ApplicationDbContext();
 
         [HttpGet]
         public ActionResult Index()
@@ -20,6 +20,13 @@ namespace dotNetCarteaDeAur.Controllers
 
             List<Publisher> publishers = db.Publishers.ToList();
             ViewBag.Publishers = publishers;
+
+            List<Order> orders = db.Orders.ToList();
+            ViewBag.Orders = orders;
+
+            ViewBag.UsersList = ctx.Users
+            .OrderBy(u => u.UserName)
+            .ToList();
 
             return View();
         }

@@ -1,0 +1,38 @@
+﻿@model dotNetCarteaDeAur.Models.Cart
+
+@{
+    ViewBag.Title = "See what you can buy";
+}
+
+<h2 class="mb-4">@ViewBag.Title</h2>
+
+<table class="table">
+    <thead>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Publisher</th>
+    <th>Books in stock</th>
+    </thead>
+    <tbody>
+        @foreach (var book in ViewBag.Books)
+        {
+            <tr>
+                <td>@book.Title</td>
+                <td>@book.Author</td>
+                <td>@book.Publisher.Pub_name</td>
+                <td>@book.Quantity</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<hr />
+
+<br />
+@using (Html.BeginForm(actionName: "New", controllerName: "Cart", method: FormMethod.Get))
+{
+    <button class="btn btn-primary m-2">
+        @Html.ActionLink("Add new order", "New")
+    </button>
+}
+<br />

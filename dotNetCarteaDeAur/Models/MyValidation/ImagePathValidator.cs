@@ -18,7 +18,6 @@ namespace dotNetCarteaDeAur.Models.MyValidation
             string imgValidPath = "/Assets/Images/";
             int pathLength = imgValidPath.Length;
             int counter = -1;
-            string[] extensions = { "png", "jpg" };
 
             // file should be jpg or png
             foreach (char c in imgPath)

@@ -1,0 +1,55 @@
+﻿@model dotNetCarteaDeAur.Models.Order
+
+@{
+    ViewBag.Title = "Place your order";
+    List<SelectListItem> listItems = new List<SelectListItem>();
+    var quantity = ViewBag.Books;
+}
+
+<h2 class="mb-4">@ViewBag.Title</h2>
+
+@using (Html.BeginForm(actionName: "New", controllerName: "Cart", method: FormMethod.Post))
+{
+      <table class="table">
+        <thead>
+        <th>Title</th>
+        <th>Price (RON)</th>
+        <th>Books in stock</th>
+        <th>Quantity desired</th>
+        </thead>
+        <tbody>
+            @foreach (var book in ViewBag.Books)
+            {
+                <tr>
+                    <td>@book.Title</td>
+                    <td>@book.Price</td>
+                    <td>@book.Quantity</td>
+
+                    <td>
+
+                        @for (int i = 1; i < book.Quantity + 1; i++)
+                        {
+
+                            listItems.Add(new SelectListItem
+                            {
+                                Text = i.ToString(),
+                                Value = i.ToString()
+                            });
+                        }
+
+                        @Html.DropDownListFor(b => b.Quantity_bought, listItems, "-- Quantity --")
+                        @Html.ValidationMessageFor(b => b.Quantity_bought, "", new { @class = "text-danger" })
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+<hr />
+
+<br />
+<button class="btn btn-primary" type="submit">Place your order</button>
+<br />
+}
+  
